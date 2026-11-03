@@ -1,0 +1,411 @@
+<!doctype html>
+<html lang="ru" data-mode="light">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#f4f1ec" />
+  <meta name="description" content="Продажи, склад и расходы магазина детских костюмов" />
+  <link rel="manifest" href="manifest.webmanifest?v=8" />
+  <link rel="icon" href="icon.svg?v=8" type="image/svg+xml" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Onest:wght@400;500;600;700&family=Prata&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css?v=20" />
+  <script>
+    try{const p=JSON.parse(localStorage.getItem('costume-profit-profile')||'{}');const a={coral:'#c8553d',red:'#b8364a',blue:'#2f6690',green:'#3f7a57',plum:'#7b4b8a'};const dark=p.mode==='dark'||(p.mode==='auto'&&matchMedia('(prefers-color-scheme: dark)').matches);document.documentElement.dataset.mode=dark?'dark':'light';document.documentElement.style.setProperty('--accent',a[p.color]||a.coral);}catch{}
+  </script>
+  <title>Baby Atelier</title>
+</head>
+<body>
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <symbol id="i-home" viewBox="0 0 24 24"><path d="M3 10.5 12 3l9 7.5"/><path d="M5 9.5V20h14V9.5"/><path d="M10 20v-5h4v5"/></symbol>
+    <symbol id="i-box" viewBox="0 0 24 24"><path d="M21 8 12 3 3 8v8l9 5 9-5V8Z"/><path d="m3 8 9 5 9-5"/><path d="M12 13v8"/></symbol>
+    <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></symbol>
+    <symbol id="i-chart" viewBox="0 0 24 24"><path d="M5 20V11"/><path d="M12 20V4"/><path d="M19 20v-6"/></symbol>
+    <symbol id="i-wallet" viewBox="0 0 24 24"><rect x="3" y="6" width="18" height="14" rx="3"/><path d="M3 10h18"/><path d="M16 15h2"/><path d="M7 6V5a2 2 0 0 1 2-2h8"/></symbol>
+    <symbol id="i-plus" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></symbol>
+    <symbol id="i-close" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6 6 18"/></symbol>
+    <symbol id="i-camera" viewBox="0 0 24 24"><path d="M4 8h3l2-3h6l2 3h3v11H4z"/><circle cx="12" cy="13" r="3.5"/></symbol>
+    <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></symbol>
+    <symbol id="i-up" viewBox="0 0 24 24"><path d="M7 17 17 7M8 7h9v9"/></symbol>
+    <symbol id="i-down" viewBox="0 0 24 24"><path d="M17 7 7 17M16 17H7V8"/></symbol>
+    <symbol id="i-user" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21c1.5-4 4.5-6 8-6s6.5 2 8 6"/></symbol>
+    <symbol id="i-download" viewBox="0 0 24 24"><path d="M12 4v11M7 10l5 5 5-5M5 20h14"/></symbol>
+    <symbol id="i-upload" viewBox="0 0 24 24"><path d="M12 20V9M7 14l5-5 5 5M5 4h14"/></symbol>
+    <symbol id="i-trash" viewBox="0 0 24 24"><path d="M4 7h16M10 11v6M14 11v6M6 7l1 13h10l1-13M9 7V4h6v3"/></symbol>
+    <symbol id="i-edit" viewBox="0 0 24 24"><path d="M4 20h4L19 9l-4-4L4 16z"/><path d="m13.5 6.5 4 4"/></symbol>
+    <symbol id="i-truck" viewBox="0 0 24 24"><path d="M3 6h11v10H3z"/><path d="M14 10h4l3 3v3h-7"/><circle cx="7" cy="18" r="2"/><circle cx="17" cy="18" r="2"/></symbol>
+    <symbol id="i-hanger" viewBox="0 0 24 24"><path d="M12 7a2 2 0 1 1 2-2c0 1.2-2 1.6-2 3v1"/><path d="M12 9 3 15.5c-.8.6-.4 1.5.5 1.5h17c.9 0 1.3-.9.5-1.5Z"/></symbol>
+    <symbol id="i-search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m20 20-4-4"/></symbol>
+    <symbol id="i-receipt" viewBox="0 0 24 24"><path d="M6 3h12v18l-3-2-3 2-3-2-3 2z"/><path d="M9 8h6M9 12h6"/></symbol>
+    <symbol id="i-minus" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M8 12h8"/></symbol>
+    <symbol id="i-return" viewBox="0 0 24 24"><path d="M9 14 4 9l5-5"/><path d="M4 9h11a5 5 0 0 1 0 10h-3"/></symbol>
+    <symbol id="i-in" viewBox="0 0 24 24"><path d="M12 3v12M7 10l5 5 5-5"/><path d="M4 15v5h16v-5"/></symbol>
+    <symbol id="i-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></symbol>
+    <symbol id="i-moon" viewBox="0 0 24 24"><path d="M20 14.5A8 8 0 1 1 9.5 4a6.5 6.5 0 0 0 10.5 10.5Z"/></symbol>
+    <symbol id="i-logout" viewBox="0 0 24 24"><path d="M15 4h4v16h-4M10 8l-4 4 4 4M6 12h10"/></symbol>
+  </svg>
+
+  <aside class="rail">
+    <div class="brand">
+      <button class="brand-mark" type="button" data-open-profile aria-label="Настройки магазина"></button>
+      <div class="brand-text"><strong class="brand-name">Baby Atelier</strong><small>Мастерская · учёт</small></div>
+    </div>
+    <nav class="rail-nav" aria-label="Разделы">
+      <a href="#home" data-view="home"><svg class="i"><use href="#i-home"/></svg>Главная</a>
+      <a href="#stock" data-view="stock"><svg class="i"><use href="#i-box"/></svg>Склад</a>
+      <a href="#history" data-view="history"><svg class="i"><use href="#i-clock"/></svg>История</a>
+      <a href="#report" data-view="report"><svg class="i"><use href="#i-chart"/></svg>Отчёт</a>
+      <a href="#expenses" data-view="expenses"><svg class="i"><use href="#i-wallet"/></svg>Расходы</a>
+    </nav>
+    <button class="btn btn-accent rail-add" type="button" data-open-quick><svg class="i"><use href="#i-plus"/></svg>Новая запись</button>
+    <div class="rail-foot">
+      <button class="rail-link" type="button" data-open-account><svg class="i"><use href="#i-user"/></svg><span class="account-label">Аккаунт</span><i class="cloud-dot"></i></button>
+      <button class="rail-link" type="button" data-toggle-mode><svg class="i"><use href="#i-moon"/></svg><span>Тёмная тема</span></button>
+    </div>
+  </aside>
+
+  <header class="topbar">
+    <button class="brand-mark" type="button" data-open-profile aria-label="Настройки магазина"></button>
+    <strong class="brand-name">Baby Atelier</strong>
+    <button class="icon-btn" type="button" data-toggle-mode aria-label="Сменить тему"><svg class="i"><use href="#i-moon"/></svg></button>
+    <button class="icon-btn account-btn" type="button" data-open-account aria-label="Аккаунт"><svg class="i"><use href="#i-user"/></svg><i class="cloud-dot"></i></button>
+  </header>
+
+  <main class="main">
+    <!-- Главная -->
+    <section class="view" data-page="home">
+      <header class="page-head">
+        <div><p class="kicker" id="todayLabel"></p><h1 class="display">Сводка</h1></div>
+        <div class="segmented" data-period-switch>
+          <button type="button" data-period="today">Сегодня</button><button type="button" data-period="month">Месяц</button><button type="button" data-period="last">Прошлый</button><button type="button" data-period="all">Всё</button>
+        </div>
+      </header>
+      <div class="home-grid">
+        <article class="hero" id="hero">
+          <div class="hero-glow" aria-hidden="true"></div>
+          <div class="hero-top"><span>Чистая прибыль</span><span class="delta" id="profitDelta"></span></div>
+          <div class="hero-value"><span id="profitTotal">0</span><small>сом</small></div>
+          <p class="hero-caption" id="profitCaption">За этот месяц</p>
+          <svg class="spark" id="heroSpark" viewBox="0 0 300 64" preserveAspectRatio="none" aria-hidden="true"></svg>
+        </article>
+        <div class="kpis">
+          <article class="kpi"><span>Выручка</span><strong id="revenueTotal">0 сом</strong></article>
+          <article class="kpi"><span>Себестоимость</span><strong id="costTotal">0 сом</strong></article>
+          <article class="kpi"><span>Продано</span><strong id="unitsTotal">0 шт.</strong><small id="salesCountLabel">0 продаж</small></article>
+          <article class="kpi"><span>Маржа</span><strong id="marginTotal">0%</strong><i class="meter"><b id="marginMeter"></b></i></article>
+        </div>
+        <article class="card">
+          <div class="card-head"><h2>Склад</h2><a class="link" href="#stock">Открыть <svg class="i"><use href="#i-arrow"/></svg></a></div>
+          <div class="figures">
+            <div><strong id="homeStockUnits">0</strong><small>шт. в наличии</small></div>
+            <div><strong id="homeStockValue">0</strong><small>вложено, сом</small></div>
+            <div><strong id="homeStockPotential">0</strong><small>можно выручить, сом</small></div>
+          </div>
+          <div id="homeLowStock" class="low-stock"></div>
+        </article>
+        <article class="card">
+          <div class="card-head"><h2>Куда уходит товар</h2><small id="flowCaption"></small></div>
+          <div id="flowBox"></div>
+        </article>
+        <article class="card span-all">
+          <div class="card-head"><h2>Последние продажи</h2><a class="link" href="#history">Вся история <svg class="i"><use href="#i-arrow"/></svg></a></div>
+          <div id="recentSales" class="rows"></div>
+        </article>
+      </div>
+    </section>
+
+    <!-- Склад -->
+    <section class="view" data-page="stock" hidden>
+      <header class="page-head">
+        <div><h1 class="display">Склад</h1><p class="sub">Сколько осталось и куда ушло</p></div>
+        <div class="head-actions">
+          <button class="btn" type="button" data-quick="in"><svg class="i"><use href="#i-in"/></svg>Приход</button>
+          <button class="btn btn-primary" type="button" data-quick="product"><svg class="i"><use href="#i-plus"/></svg>Товар</button>
+        </div>
+      </header>
+      <div class="summary-strip">
+        <div><small>Позиций</small><strong id="stockPositions">0</strong></div>
+        <div><small>Штук в наличии</small><strong id="stockUnits">0</strong></div>
+        <div><small>Вложено</small><strong id="stockValue">0 сом</strong></div>
+        <div><small>Ушло за месяц</small><strong id="stockOutMonth">0 шт.</strong></div>
+      </div>
+      <div class="toolbar">
+        <label class="search"><svg class="i"><use href="#i-search"/></svg><input id="stockSearch" type="search" placeholder="Найти товар или артикул" autocomplete="off" /></label>
+        <div class="chips" id="stockFilter">
+          <button type="button" data-filter="all" class="active">Все</button><button type="button" data-filter="in">В наличии</button><button type="button" data-filter="low">Заканчивается</button><button type="button" data-filter="out">Нет</button>
+        </div>
+      </div>
+      <div class="product-grid" id="productGrid"></div>
+      <article class="card">
+        <div class="card-head"><h2>Движение товара</h2><small>последние записи</small></div>
+        <div id="movementList" class="timeline"></div>
+      </article>
+    </section>
+
+    <!-- История -->
+    <section class="view" data-page="history" hidden>
+      <header class="page-head">
+        <div><h1 class="display">История</h1><p class="sub" id="historySub">Все продажи по дням</p></div>
+        <label class="search"><svg class="i"><use href="#i-search"/></svg><input id="historySearch" type="search" placeholder="Поиск по продажам" autocomplete="off" /></label>
+      </header>
+      <div id="historyList"></div>
+    </section>
+
+    <!-- Отчёт -->
+    <section class="view" data-page="report" hidden>
+      <header class="page-head">
+        <div><h1 class="display">Отчёт</h1><p class="sub" id="reportSub">За этот месяц</p></div>
+        <div class="head-actions">
+          <button class="btn" type="button" id="exportExcelBtn"><svg class="i"><use href="#i-download"/></svg>Excel</button>
+          <button class="btn" type="button" id="importExcelBtn"><svg class="i"><use href="#i-upload"/></svg>Импорт</button>
+          <input id="excelImportFile" type="file" accept=".xlsx,.xls" hidden />
+        </div>
+      </header>
+      <div class="segmented" data-period-switch>
+        <button type="button" data-period="today">Сегодня</button><button type="button" data-period="month">Месяц</button><button type="button" data-period="last">Прошлый</button><button type="button" data-period="all">Всё</button>
+      </div>
+      <div class="report-grid">
+        <article class="card goal-card">
+          <div class="card-head"><h2>Цель на месяц</h2></div>
+          <div class="goal">
+            <svg viewBox="0 0 120 120" class="ring"><circle cx="60" cy="60" r="52" class="ring-track"/><circle cx="60" cy="60" r="52" class="ring-fill" id="goalRing"/></svg>
+            <div class="goal-center"><strong id="goalPercent">0%</strong><small id="goalText">0 из 0</small></div>
+          </div>
+          <label class="field compact"><span>Цель по прибыли, сом</span><input class="input" id="goalInput" type="number" min="1" step="500" inputmode="numeric" /></label>
+        </article>
+        <article class="card chart-card">
+          <div class="card-head"><h2 id="chartTitle">Прибыль по дням</h2><small id="chartReadout">Нажмите на столбик</small></div>
+          <div id="profitChart"></div>
+        </article>
+        <article class="card">
+          <div class="card-head"><h2>Итог периода</h2></div>
+          <dl class="ledger" id="periodLedger"></dl>
+        </article>
+        <article class="card">
+          <div class="card-head"><h2>Сравнение</h2></div>
+          <div class="compare" id="compareBox"></div>
+        </article>
+        <article class="card">
+          <div class="card-head"><h2>Лучшие товары</h2><small>по прибыли</small></div>
+          <div id="topProducts" class="bars-list"></div>
+        </article>
+        <article class="card">
+          <div class="card-head"><h2>Каналы продаж</h2><small>по выручке</small></div>
+          <div id="channelBox" class="bars-list"></div>
+        </article>
+      </div>
+    </section>
+
+    <!-- Расходы -->
+    <section class="view" data-page="expenses" hidden>
+      <header class="page-head">
+        <div><h1 class="display">Расходы</h1><p class="sub">Аренда, материалы и прочие траты</p></div>
+        <button class="btn btn-primary" type="button" data-quick="expense"><svg class="i"><use href="#i-plus"/></svg>Расход</button>
+      </header>
+      <div class="expense-grid">
+        <article class="card expense-total">
+          <small>Потрачено в этом месяце</small>
+          <strong id="expenseMonthTotal">0 сом</strong>
+          <span id="expenseMonthNote"></span>
+        </article>
+        <article class="card">
+          <div class="card-head"><h2>По категориям</h2><small>этот месяц</small></div>
+          <div id="expenseBreakdown" class="bars-list"></div>
+        </article>
+      </div>
+      <article class="card">
+        <div class="card-head"><h2>Все записи</h2><small id="expenseCount">0</small></div>
+        <div id="expenseList" class="rows"></div>
+      </article>
+    </section>
+  </main>
+
+  <button class="fab" type="button" data-open-quick aria-label="Новая запись"><svg class="i"><use href="#i-plus"/></svg></button>
+  <nav class="tabbar" aria-label="Разделы">
+    <a href="#home" data-view="home"><svg class="i"><use href="#i-home"/></svg>Главная</a>
+    <a href="#stock" data-view="stock"><svg class="i"><use href="#i-box"/></svg>Склад</a>
+    <a href="#history" data-view="history"><svg class="i"><use href="#i-clock"/></svg>История</a>
+    <a href="#report" data-view="report"><svg class="i"><use href="#i-chart"/></svg>Отчёт</a>
+    <a href="#expenses" data-view="expenses"><svg class="i"><use href="#i-wallet"/></svg>Расходы</a>
+  </nav>
+
+  <!-- Быстрые действия -->
+  <dialog class="sheet" id="quickDialog">
+    <div class="sheet-body">
+      <header class="sheet-head"><h2>Что записать?</h2><button type="button" class="icon-btn" data-close aria-label="Закрыть"><svg class="i"><use href="#i-close"/></svg></button></header>
+      <div class="quick-grid">
+        <button type="button" data-quick="sale"><svg class="i"><use href="#i-receipt"/></svg><strong>Продажа</strong><small>Продал костюм</small></button>
+        <button type="button" data-quick="in"><svg class="i"><use href="#i-in"/></svg><strong>Приход</strong><small>Товар поступил</small></button>
+        <button type="button" data-quick="move"><svg class="i"><use href="#i-truck"/></svg><strong>Передача</strong><small>Отдал на точку, списал</small></button>
+        <button type="button" data-quick="product"><svg class="i"><use href="#i-hanger"/></svg><strong>Новый товар</strong><small>Карточка на складе</small></button>
+        <button type="button" data-quick="expense" class="wide"><svg class="i"><use href="#i-wallet"/></svg><strong>Расход</strong><small>Аренда, ткань, доставка</small></button>
+      </div>
+    </div>
+  </dialog>
+
+  <!-- Продажа -->
+  <dialog class="sheet" id="saleDialog">
+    <form class="sheet-body" id="saleForm" novalidate>
+      <header class="sheet-head"><h2 id="saleDialogTitle">Продажа</h2><button type="button" class="icon-btn" data-close aria-label="Закрыть"><svg class="i"><use href="#i-close"/></svg></button></header>
+      <label class="field"><span>Товар со склада <em>необязательно</em></span><select class="input" id="saleProduct"></select><small class="hint" id="saleStockHint"></small></label>
+      <label class="photo-pick" id="salePhotoPick"><input id="salePhotoInput" type="file" accept="image/*" hidden /><img alt="" hidden /><span class="photo-empty"><svg class="i"><use href="#i-camera"/></svg>Фото костюма</span></label>
+      <div class="grid-2">
+        <label class="field"><span>Количество</span><input class="input" id="saleQty" type="number" min="1" step="1" value="1" inputmode="numeric" /></label>
+        <label class="field"><span>Дата</span><input class="input" id="saleDate" type="date" /></label>
+      </div>
+      <div class="field"><span>Куда ушёл</span><div class="with-add"><select class="input" id="saleChannel"></select><button type="button" class="icon-btn" data-add-option="place" data-target="saleChannel" aria-label="Добавить канал"><svg class="i"><use href="#i-plus"/></svg></button></div></div>
+      <div class="grid-2">
+        <label class="field"><span>Себестоимость</span><div class="money"><input class="input" id="costInput" type="number" min="0" step="1" inputmode="decimal" placeholder="3000" /><b>сом</b></div></label>
+        <label class="field"><span>Цена продажи</span><div class="money"><input class="input" id="priceInput" type="number" min="0" step="1" inputmode="decimal" placeholder="5000" /><b>сом</b></div></label>
+      </div>
+      <div class="calc"><div><small>Прибыль</small><strong id="liveProfit">0 сом</strong></div><div><small>Маржа</small><strong id="liveMargin">0%</strong></div></div>
+      <label class="field"><span>Название <em>необязательно</em></span><input class="input" id="noteInput" maxlength="80" placeholder="Костюм зайчика на годик" /></label>
+      <button class="btn btn-primary btn-block" id="saveSaleBtn" type="submit">Сохранить продажу</button>
+    </form>
+  </dialog>
+
+  <!-- Детали продажи -->
+  <dialog class="sheet" id="saleDetailDialog">
+    <div class="sheet-body">
+      <header class="sheet-head"><h2>Продажа</h2><button type="button" class="icon-btn" data-close aria-label="Закрыть"><svg class="i"><use href="#i-close"/></svg></button></header>
+      <div id="saleDetail"></div>
+      <div class="sheet-actions">
+        <button class="btn btn-danger" type="button" id="deleteSaleBtn"><svg class="i"><use href="#i-trash"/></svg>Удалить</button>
+        <button class="btn btn-primary" type="button" id="editSaleBtn"><svg class="i"><use href="#i-edit"/></svg>Изменить</button>
+      </div>
+    </div>
+  </dialog>
+
+  <!-- Товар: создание и редактирование -->
+  <dialog class="sheet" id="productDialog">
+    <form class="sheet-body" id="productForm" novalidate>
+      <header class="sheet-head"><h2 id="productDialogTitle">Новый товар</h2><button type="button" class="icon-btn" data-close aria-label="Закрыть"><svg class="i"><use href="#i-close"/></svg></button></header>
+      <label class="photo-pick tall" id="productPhotoPick"><input id="productPhotoInput" type="file" accept="image/*" hidden /><img alt="" hidden /><span class="photo-empty"><svg class="i"><use href="#i-camera"/></svg>Фото товара</span></label>
+      <label class="field"><span>Название</span><input class="input" id="productName" maxlength="60" placeholder="Костюм лисички" required /></label>
+      <label class="field"><span>Размер или артикул <em>необязательно</em></span><input class="input" id="productSku" maxlength="40" placeholder="98 см · L-014" /></label>
+      <div class="grid-2">
+        <label class="field"><span>Себестоимость за шт.</span><div class="money"><input class="input" id="productCost" type="number" min="0" step="1" inputmode="decimal" placeholder="2500" /><b>сом</b></div></label>
+        <label class="field"><span>Цена за шт.</span><div class="money"><input class="input" id="productPrice" type="number" min="0" step="1" inputmode="decimal" placeholder="4500" /><b>сом</b></div></label>
+      </div>
+      <label class="field" id="productQtyField"><span>Сколько штук сейчас есть</span><input class="input" id="productQty" type="number" min="0" step="1" value="1" inputmode="numeric" /></label>
+      <button class="btn btn-primary btn-block" type="submit" id="saveProductBtn">Добавить на склад</button>
+    </form>
+  </dialog>
+
+  <!-- Карточка товара -->
+  <dialog class="sheet" id="productDetailDialog">
+    <div class="sheet-body">
+      <header class="sheet-head"><h2>Товар</h2><button type="button" class="icon-btn" data-close aria-label="Закрыть"><svg class="i"><use href="#i-close"/></svg></button></header>
+      <div id="productDetail"></div>
+      <div class="sheet-actions">
+        <button class="btn btn-danger" type="button" id="deleteProductBtn"><svg class="i"><use href="#i-trash"/></svg>Удалить</button>
+        <button class="btn" type="button" id="editProductBtn"><svg class="i"><use href="#i-edit"/></svg>Изменить</button>
+      </div>
+    </div>
+  </dialog>
+
+  <!-- Движение товара -->
+  <dialog class="sheet" id="moveDialog">
+    <form class="sheet-body" id="moveForm" novalidate>
+      <header class="sheet-head"><h2>Движение товара</h2><button type="button" class="icon-btn" data-close aria-label="Закрыть"><svg class="i"><use href="#i-close"/></svg></button></header>
+      <div class="segmented full" id="moveType">
+        <button type="button" data-type="in">Приход</button><button type="button" data-type="transfer">Передача</button><button type="button" data-type="return">Возврат</button><button type="button" data-type="writeoff">Списание</button>
+      </div>
+      <label class="field"><span>Товар</span><select class="input" id="moveProduct"></select><small class="hint" id="moveStockHint"></small></label>
+      <div class="grid-2">
+        <label class="field"><span>Количество</span><input class="input" id="moveQty" type="number" min="1" step="1" value="1" inputmode="numeric" /></label>
+        <label class="field"><span>Дата</span><input class="input" id="moveDate" type="date" /></label>
+      </div>
+      <div class="field" id="movePlaceField"><span id="movePlaceLabel">Куда</span><div class="with-add"><select class="input" id="movePlace"></select><button type="button" class="icon-btn" data-add-option="place" data-target="movePlace" aria-label="Добавить место"><svg class="i"><use href="#i-plus"/></svg></button></div></div>
+      <label class="field"><span>Комментарий <em>необязательно</em></span><input class="input" id="moveNote" maxlength="100" placeholder="Например, партия от швеи" /></label>
+      <button class="btn btn-primary btn-block" type="submit">Записать</button>
+    </form>
+  </dialog>
+
+  <!-- Расход -->
+  <dialog class="sheet" id="expenseDialog">
+    <form class="sheet-body" id="expenseForm" novalidate>
+      <header class="sheet-head"><h2>Расход</h2><button type="button" class="icon-btn" data-close aria-label="Закрыть"><svg class="i"><use href="#i-close"/></svg></button></header>
+      <label class="field"><span>Сумма</span><div class="money"><input class="input" id="expenseAmount" type="number" min="1" step="1" inputmode="decimal" placeholder="2500" /><b>сом</b></div></label>
+      <div class="field"><span>Категория</span><div class="with-add"><select class="input" id="expenseCategory"></select><button type="button" class="icon-btn" data-add-option="category" data-target="expenseCategory" aria-label="Добавить категорию"><svg class="i"><use href="#i-plus"/></svg></button></div></div>
+      <div class="grid-2">
+        <label class="field"><span>Дата</span><input class="input" id="expenseDate" type="date" /></label>
+        <label class="field"><span>Что купили <em>необяз.</em></span><input class="input" id="expenseNote" maxlength="100" placeholder="Ткань, фурнитура" /></label>
+      </div>
+      <button class="btn btn-primary btn-block" type="submit">Сохранить расход</button>
+    </form>
+  </dialog>
+
+  <!-- Новый вариант списка -->
+  <dialog class="sheet small" id="optionDialog">
+    <form class="sheet-body" id="optionForm" novalidate>
+      <header class="sheet-head"><h2 id="optionTitle">Новый вариант</h2><button type="button" class="icon-btn" data-close aria-label="Закрыть"><svg class="i"><use href="#i-close"/></svg></button></header>
+      <label class="field"><span id="optionLabel">Название</span><input class="input" id="optionName" maxlength="40" required /></label>
+      <button class="btn btn-primary btn-block" type="submit">Добавить</button>
+    </form>
+  </dialog>
+
+  <!-- Профиль -->
+  <dialog class="sheet" id="profileDialog">
+    <form class="sheet-body" id="profileForm" novalidate>
+      <header class="sheet-head"><h2>Магазин</h2><button type="button" class="icon-btn" data-close aria-label="Закрыть"><svg class="i"><use href="#i-close"/></svg></button></header>
+      <div class="profile-top">
+        <label class="avatar-pick"><input id="profilePhotoInput" type="file" accept="image/*" hidden /><span id="profileAvatar"></span></label>
+        <div>
+          <label class="field compact"><span>Название магазина</span><input class="input" id="profileName" maxlength="40" required /></label>
+          <button type="button" class="text-btn" id="clearProfilePhotoBtn" hidden>Убрать фото</button>
+        </div>
+      </div>
+      <div class="field"><span>Цвет акцента</span>
+        <div class="swatches">
+          <button type="button" data-accent="coral" style="--sw:#c8553d" aria-label="Терракота"></button>
+          <button type="button" data-accent="red" style="--sw:#b8364a" aria-label="Гранат"></button>
+          <button type="button" data-accent="blue" style="--sw:#2f6690" aria-label="Океан"></button>
+          <button type="button" data-accent="green" style="--sw:#3f7a57" aria-label="Шалфей"></button>
+          <button type="button" data-accent="plum" style="--sw:#7b4b8a" aria-label="Слива"></button>
+        </div>
+      </div>
+      <div class="field"><span>Тема</span>
+        <div class="segmented full"><button type="button" data-theme-mode="light">Светлая</button><button type="button" data-theme-mode="dark">Тёмная</button><button type="button" data-theme-mode="auto">Как в системе</button></div>
+      </div>
+      <button class="btn btn-primary btn-block" type="submit">Сохранить</button>
+    </form>
+  </dialog>
+
+  <!-- Аккаунт -->
+  <dialog class="sheet small" id="accountDialog">
+    <div class="sheet-body">
+      <header class="sheet-head"><h2>Аккаунт</h2><button type="button" class="icon-btn" data-close aria-label="Закрыть"><svg class="i"><use href="#i-close"/></svg></button></header>
+      <p class="note" id="accountStatus" role="status"></p>
+      <form id="accountForm" novalidate>
+        <label class="field"><span>Почта</span><input class="input" id="accountEmail" type="email" autocomplete="username" /></label>
+        <label class="field"><span>Пароль</span><input class="input" id="accountPassword" type="password" autocomplete="current-password" /></label>
+        <div class="sheet-actions">
+          <button class="btn" type="button" id="signUpBtn">Создать аккаунт</button>
+          <button class="btn btn-primary" type="submit">Войти</button>
+        </div>
+      </form>
+      <div id="accountSignedIn" hidden>
+        <button class="btn btn-block" type="button" id="signOutBtn"><svg class="i"><use href="#i-logout"/></svg>Выйти</button>
+      </div>
+    </div>
+  </dialog>
+
+  <!-- Подтверждение -->
+  <dialog class="sheet small" id="confirmDialog">
+    <div class="sheet-body">
+      <p class="confirm-text" id="confirmText"></p>
+      <div class="sheet-actions">
+        <button class="btn" type="button" id="confirmCancel">Отмена</button>
+        <button class="btn btn-primary" type="button" id="confirmOk">Да</button>
+      </div>
+    </div>
+  </dialog>
+
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.45.4/dist/umd/supabase.min.js"></script>
+  <script src="https://cdn.sheetjs.com/xlsx-0.20.3/package/dist/xlsx.full.min.js"></script>
+  <script src="app.js?v=20"></script>
+</body>
+</html>
